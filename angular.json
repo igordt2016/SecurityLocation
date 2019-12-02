@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "security-location": {
+    "material-dashboard-angular": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",

@@ -1,5 +1,5 @@
 {
-  "name": "security-location",
+  "name": "material-dashboard-angular",
   "version": "2.3.0",
   "license": "MIT",
   "scripts": {
@@ -60,7 +60,7 @@
     "@angular/language-service": "8.0.0",
     "@types/bootstrap": "4.3.0",
     "@types/chartist": "0.9.46",
-    "@types/googlemaps": "^3.37.7",
+    "@types/googlemaps": "^3.38.1",
     "@types/jasmine": "3.3.13",
     "@types/jquery": "3.3.29",
     "@types/node": "12.0.7",

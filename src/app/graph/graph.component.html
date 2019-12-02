@@ -1,7 +1,7 @@
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <mat-form-field class="example-full-width">
           <input
             matInput
@@ -12,43 +12,56 @@
           />
         </mat-form-field>
       </div>
-      <div class="col-md-2">
-          <mat-form-field class="example-full-width">
-            <input
-              matInput
-              placeholder="Bairro 2"
-              type="text"
-              [(ngModel)]="occurrence.local2"
-              name="local2"
-            />
-          </mat-form-field>
-        </div>
-        <div class="col-md-2">
-            <mat-form-field class="example-full-width">
-              <input
-                matInput
-                placeholder="Bairro 3"
-                type="text"
-                [(ngModel)]="occurrence.local3"
-                name="local3"
-              />
-            </mat-form-field>
-          </div>
+      <div class="col-md-3">
+        <mat-form-field class="example-full-width">
+          <input
+            matInput
+            placeholder="Bairro 2"
+            type="text"
+            [(ngModel)]="occurrence.local2"
+            name="local2"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-md-3">
+        <mat-form-field class="example-full-width">
+          <input
+            matInput
+            placeholder="Bairro 3"
+            type="text"
+            [(ngModel)]="occurrence.local3"
+            name="local3"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-md-3">
+        <button
+          mat-raised-button
+          type="submit"
+          class="btn btn-success pull-right"
+          (click)="onSubmit()"
+        >
+          Confirmar
+        </button>
+      </div>
     </div>
-    <button mat-raised-button type="submit" class="btn btn-success pull-right" (click)="onSubmit()">
-        Confirmar
-      </button>
-        <!-- <div class="card card-chart">
+    <!-- <div class="card card-chart">
             <div class="card-header card-header-warning">
                 <div class="ct-chart" id="websiteViewsChart"></div>
             </div>
         </div> -->
-        <div>
-            <div style="display: block">
-                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
-                  [legend]="barChartLegend" [chartType]="barChartType">
-                </canvas>
-              </div>
-          </div>
+    <div>
+      <div style="display: block">
+        <canvas
+          baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+        >
+        </canvas>
+      </div>
+    </div>
   </div>
 </div>
