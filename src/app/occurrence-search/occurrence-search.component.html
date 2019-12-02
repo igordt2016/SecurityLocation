@@ -1,0 +1,62 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header card-header-danger">
+        <h4 class="card-title">Consulta</h4>
+        <p class="card-category">Consulte a Ocorrência</p>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Digite o Endereço aqui..."
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="off"
+            type="text"
+            #search
+            hidden
+          />
+        </div>
+
+        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+          <agm-marker
+            [latitude]="latitude"
+            [longitude]="longitude"
+            [markerDraggable]="true"
+            (dragEnd)="markerDragEnd($event)"
+          ></agm-marker>
+        </agm-map>
+        <h5>Bairro: {{ bairro }}</h5>
+        <div *ngIf="bairros.includes(bairro)">
+          <div
+            class="card mt-2"
+            *ngFor="let occurrence of occurrenceList | async"
+          >
+          <div *ngIf="bairro == occurrence.bairro">
+            <div class="card-body">
+              <h5 class="card-title">Local: {{ occurrence.local }}</h5>
+              <p align="left" class="card-text">
+                Protocolo: {{ occurrence.protocolo }}
+              </p>
+              <p align="left" class="card-text">
+                Tipo de Ocorrência: {{ occurrence.tpOcorrencia }}
+              </p>
+              <p align="left" class="card-text">
+                Bairro: {{ occurrence.bairro }}
+              </p>
+              <p align="left" class="card-text">
+                Data: {{ occurrence.data | date: "dd/MM/yyyy" }}
+              </p>
+              <p align="left" class="card-text">
+                Presença da Polícia: {{ occurrence.temPolicia }}
+              </p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

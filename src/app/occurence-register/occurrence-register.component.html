@@ -1,0 +1,124 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header card-header-danger">
+        <h4 class="card-title">Cadastro</h4>
+        <p class="card-category">Cadastre a Ocorrência</p>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()">
+          <div class="container">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Digite o Endereço aqui..."
+                autocorrect="off"
+                autocapitalize="off"
+                spellcheck="off"
+                type="text"
+                #search
+              />
+            </div>
+
+            <agm-map
+              [latitude]="latitude"
+              [longitude]="longitude"
+              [zoom]="zoom"
+            >
+              <agm-marker
+                [latitude]="latitude"
+                [longitude]="longitude"
+                [markerDraggable]="true"
+                (dragEnd)="markerDragEnd($event)"
+              ></agm-marker>
+            </agm-map>
+
+            <h5>Localização: {{ address }}</h5>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <mat-label>Tipo de Ocorrência</mat-label>
+                <select
+                  matNativeControl
+                  required
+                  [(ngModel)]="occurrence.tpOcorrencia"
+                  name="tpOcorrencia"
+                >
+                  <option value="">Escolha...</option>
+                  <option>Assalto</option>
+                  <option>Furto</option>
+                  <option>Estupro</option>
+                  <option>Som Alto</option>
+                  <option>Homicidio</option>
+                </select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Protocolo"
+                  type="text"
+                  [(ngModel)]="occurrence.protocolo"
+                  name="protocolo"
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <mat-label>Data da Ocorrência</mat-label>
+                <input
+                  matInput
+                  required
+                  type="date"
+                  [(ngModel)]="occurrence.data"
+                  name="data"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <mat-label>Polícia Presente?</mat-label>
+                <select
+                  matNativeControl
+                  required
+                  [(ngModel)]="occurrence.temPolicia"
+                  name="temPolicia"
+                >
+                  <option value="">Escolha...</option>
+                  <option>Sim</option>
+                  <option>Não</option>
+                </select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <mat-form-field class="example-full-width">
+                <textarea
+                  matInput
+                  placeholder="Descrição da Ocorrência"
+                  [(ngModel)]="occurrence.descricao"
+                  name="descricao"
+                ></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+          <button
+            mat-raised-button
+            type="submit"
+            class="btn btn-danger pull-right"
+          >
+            Cadastrar
+          </button>
+          <div class="clearfix"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
