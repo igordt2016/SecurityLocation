@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --output-path angularapp  --aot --prod"
+    "postinstall": "ng build --output-path angularapp  --aot --prod",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && ng serve -o"
   },
   "engines": {
     "node": "12.13.1",
@@ -21,9 +22,9 @@
     "@angular/animations": "8.0.0",
     "@angular/cdk": "8.0.1",
     "@angular/cli": "^8.3.20",
-    "@angular/common": "8.0.0",
     "@angular/compiler": "^8.2.14",
     "@angular/compiler-cli": "^8.0.0",
+    "@angular/common": "8.0.0",
     "@angular/core": "8.0.0",
     "@angular/fire": "^5.2.3",
     "@angular/forms": "8.0.0",
