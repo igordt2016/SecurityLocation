@@ -31,7 +31,7 @@
         <h5>Bairro: {{ bairro }}</h5>
         <div *ngIf="bairros.includes(bairro)">
           <div *ngFor="let occurrence of occurrenceList | async">
-            <div *ngIf="bairro == occurrence.bairro">
+            <div class="card mt-2" *ngIf="bairro == occurrence.bairro">
               <div class="card-body">
                 <h5 class="card-title">Local: {{ occurrence.local }}</h5>
                 <p align="left" class="card-text">
