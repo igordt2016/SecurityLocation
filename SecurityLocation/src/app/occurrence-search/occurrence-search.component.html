@@ -30,30 +30,27 @@
         </agm-map>
         <h5>Bairro: {{ bairro }}</h5>
         <div *ngIf="bairros.includes(bairro)">
-          <div
-            class="card mt-2"
-            *ngFor="let occurrence of occurrenceList | async"
-          >
-          <div *ngIf="bairro == occurrence.bairro">
-            <div class="card-body">
-              <h5 class="card-title">Local: {{ occurrence.local }}</h5>
-              <p align="left" class="card-text">
-                Protocolo: {{ occurrence.protocolo }}
-              </p>
-              <p align="left" class="card-text">
-                Tipo de Ocorrência: {{ occurrence.tpOcorrencia }}
-              </p>
-              <p align="left" class="card-text">
-                Bairro: {{ occurrence.bairro }}
-              </p>
-              <p align="left" class="card-text">
-                Data: {{ occurrence.data | date: "dd/MM/yyyy" }}
-              </p>
-              <p align="left" class="card-text">
-                Presença da Polícia: {{ occurrence.temPolicia }}
-              </p>
+          <div *ngFor="let occurrence of occurrenceList | async">
+            <div *ngIf="bairro == occurrence.bairro">
+              <div class="card-body">
+                <h5 class="card-title">Local: {{ occurrence.local }}</h5>
+                <p align="left" class="card-text">
+                  Protocolo: {{ occurrence.protocolo }}
+                </p>
+                <p align="left" class="card-text">
+                  Tipo de Ocorrência: {{ occurrence.tpOcorrencia }}
+                </p>
+                <p align="left" class="card-text">
+                  Bairro: {{ occurrence.bairro }}
+                </p>
+                <p align="left" class="card-text">
+                  Data: {{ occurrence.data | date: "dd/MM/yyyy" }}
+                </p>
+                <p align="left" class="card-text">
+                  Presença da Polícia: {{ occurrence.temPolicia }}
+                </p>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
