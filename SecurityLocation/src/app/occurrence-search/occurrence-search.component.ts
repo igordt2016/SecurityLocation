@@ -122,9 +122,9 @@ export class OccurrenceSearchComponent implements OnInit {
                 return e === inputBairro;
               });
               console.log(totalBairro.length);
-              if(totalBairro.length >= 1 ){
+              if(totalBairro.length >= 2 ){
               this.iconUrl = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
-              }else if(totalBairro.length >= 3){
+              }else if(totalBairro.length >= 4){
                 this.iconUrl = "http://maps.google.com/mapfiles/ms/icons/orange-dot.png";
               }else if(totalBairro.length >= 7){
                 this.iconUrl = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
