@@ -1,6 +1,15 @@
+<div class="col-md-2" *ngIf="showButton()">
+  <button
+    mat-raised-button
+    (click)="mostrarLegenda()"
+    class="btn btn-danger"
+  >
+    Mostrar Legenda
+  </button>
+</div>
 <div class="main-content">
   <div class="container-fluid">
-    <div *ngIf="showButtons()">
+    <div *ngIf="showLinks()">
       <div class="card">
         <div class="card-header card-header-danger">
           <div class="row">
@@ -17,32 +26,30 @@
             <div class="col-md-2">
               <a class="card-title" href="#/graph">Gráfico</a>
             </div>
+            <div class="col-md-2">
+                <button
+                mat-raised-button
+                (click)="mostrarLegenda()"
+                class="btn btn-danger pull-right"
+              >
+                Mostrar Legenda
+              </button>
+              </div>
           </div>
         </div>
       </div>
     </div>
     <div class="card">
-      <div class="card-body">
-        <div class="row">
-          <button
-            mat-raised-button
-            (click)="mostrarLegenda()"
-            class="btn btn-danger pull-left"
-          >
-            Mostrar Legenda
-          </button>
-        </div>
-      </div>
       <div *ngIf="click == 1">
         <div class="card">
           <img src="assets/img/green-dot.png" width="40" height="20" />
           <h5>Bairro Seguro, nenhuma ocorrência encontrada.</h5>
           <img src="assets/img/blue-dot.png" width="40" height="20" />
-          <h5>Bairro contém duas ocorrências registradas.</h5>
+          <h5>Bairro contém uma ocorrência registrada.</h5>
           <img src="assets/img/orange-dot.png" width="40" height="20" />
-          <h5>Aréa de Alerta, algumas ocorrências registradas nesse bairro.</h5>
+          <h5>Aréa de Alerta, algumas ocorrências encontradas nesse bairro.</h5>
           <img src="assets/img/red-dot.png" width="40" height="20" />
-          <h5>Área de Perigo, muitas ocorrências registradas nesse bairro.</h5>
+          <h5>Área de Perigo, Muitos encontradas nesse bairro.</h5>
           <div class="card-body">
             <div class="row">
               <button

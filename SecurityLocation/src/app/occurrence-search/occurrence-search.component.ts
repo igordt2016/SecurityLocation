@@ -19,6 +19,7 @@ declare const $: any;
   styleUrls: ["./occurrence-search.component.css"]
 })
 export class OccurrenceSearchComponent implements OnInit {
+  
   occurrence: Occurrence = new Occurrence();
   occurrenceList: Observable<any>;
   occurrenceBairro: Observable<any>;
@@ -29,6 +30,7 @@ export class OccurrenceSearchComponent implements OnInit {
   zoom: number;
   address: string;
   private geoCoder;
+
 
   @ViewChild("search", { static: true })
   public searchElementRef: ElementRef;
@@ -79,12 +81,13 @@ export class OccurrenceSearchComponent implements OnInit {
         });
       });
     });
-
+    
     this.occurrenceList = this.occurrenceService.getAll();
     this.occurrenceBairro = this.occurrenceService.getBairro();
     this.getBairro();
     this.changeColor();
   }
+
 
   private setCurrentLocation() {
     if ("geolocation" in navigator) {
@@ -102,12 +105,18 @@ export class OccurrenceSearchComponent implements OnInit {
     this.longitude = $event.coords.lng;
     this.getBairro();
     this.changeColor();
+
+    
   }
 
+  
+
   getAddress(latitude, longitude) {
+    
     this.geoCoder.geocode(
       { location: { lat: latitude, lng: longitude } },
       (results, status) => {
+        
         if (status === "OK") {
           if (results[0]) {
             this.zoom = 16;
@@ -128,30 +137,37 @@ export class OccurrenceSearchComponent implements OnInit {
     });
   }
 
-  showButtons() {
-    console.log($(window).width());
-    if ($(window).width() < 991) {
-      return true;
+  showLinks(){
+    if($(window).width() < 991){
+          return true;
     }
-    return false;
+          return false;
   }
 
-  mostrarLegenda() {
-    if (this.click == 0) {
+  mostrarLegenda(){
+
+    if(this.click == 0 ){
+
       this.click = 1;
     }
+
   }
 
-  ocultarLegenda() {
-    this.click = 0;
+  ocultarLegenda(){
+
+   this.click = 0;
+
   }
 
-  changeColor() {
+  changeColor(){
+
     this.occurrenceBairro.subscribe(bairros => {
+      
       this.bairros = bairros;
       this.geoCoder.geocode(
         { location: { lat: this.latitude, lng: this.longitude } },
         (results, status) => {
+          
           if (status === "OK") {
             if (results[0]) {
               this.zoom = 16;
@@ -162,18 +178,14 @@ export class OccurrenceSearchComponent implements OnInit {
                 return e === inputBairro;
               });
               console.log(totalBairro.length);
-              if (totalBairro.length >= 2) {
-                this.iconUrl =
-                  "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
-              } else if (totalBairro.length >= 4) {
-                this.iconUrl =
-                  "http://maps.google.com/mapfiles/ms/icons/orange-dot.png";
-              } else if (totalBairro.length >= 7) {
-                this.iconUrl =
-                  "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
-              } else {
-                this.iconUrl =
-                  "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+              if(totalBairro.length >= 2 && totalBairro.length < 4 ){
+              this.iconUrl = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
+              }else if(totalBairro.length >= 4 && totalBairro.length < 7){
+                this.iconUrl = "http://maps.google.com/mapfiles/ms/icons/orange-dot.png";
+              }else if(totalBairro.length >= 7){
+                this.iconUrl = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
+              }else{
+                this.iconUrl = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
               }
             } else {
               window.alert("No results found");
@@ -183,6 +195,15 @@ export class OccurrenceSearchComponent implements OnInit {
           }
         }
       );
+      
     });
   }
+  
+  showButton() {
+    if ($(window).width() > 991) {
+        return true;
+    }
+    return false;
+};
+
 }
