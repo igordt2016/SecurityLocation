@@ -1,6 +1,62 @@
 <div class="main-content">
   <div class="container-fluid">
+    <div *ngIf="showButtons()">
+      <div class="card">
+        <div class="card-header card-header-danger">
+          <div class="row">
+            <div class="col-md-2">
+              <a class="card-title" href="#/occurrence-register"
+                >Cadastro de Ocorrência</a
+              >
+            </div>
+            <div class="col-md-2">
+              <a class="card-title" href="#/occurrence-search"
+                >Consulta de Ocorrência</a
+              >
+            </div>
+            <div class="col-md-2">
+              <a class="card-title" href="#/graph">Gráfico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <button
+            mat-raised-button
+            (click)="mostrarLegenda()"
+            class="btn btn-danger pull-left"
+          >
+            Mostrar Legenda
+          </button>
+
+        </div>
+      </div>
+      <div *ngIf="click == 1">
+        <div class="card">
+          <img src="assets/img/green-dot.png" width="40" height="20" />
+          <h5>Bairro Seguro, nenhuma ocorrência encontrada.</h5>
+          <img src="assets/img/blue-dot.png" width="40" height="20" />
+          <h5>Bairro contém uma ocorrência registrada.</h5>
+          <img src="assets/img/orange-dot.png" width="40" height="20" />
+          <h5>Aréa de Alerta, algumas ocorrências encontradas nesse bairro.</h5>
+          <img src="assets/img/red-dot.png" width="40" height="20" />
+          <h5>Área de Perigo, Muitos encontradas nesse bairro.</h5>
+          <div class="card-body">
+              <div class="row">
+                <button
+                  mat-raised-button
+                  (click)="ocultarLegenda()"
+                  class="btn pull-left"
+                >
+                  Ocultar Legenda
+                </button>
+              </div>
+            </div>
+        </div>
+      </div>
       <div class="card-header card-header-danger">
         <h4 class="card-title">Consulta</h4>
         <p class="card-category">Consulte a Ocorrência</p>
@@ -16,7 +72,6 @@
             spellcheck="off"
             type="text"
             #search
-            hidden
           />
         </div>
 
@@ -25,6 +80,7 @@
             [latitude]="latitude"
             [longitude]="longitude"
             [markerDraggable]="true"
+            [iconUrl]="iconUrl"
             (dragEnd)="markerDragEnd($event)"
           ></agm-marker>
         </agm-map>

@@ -27,8 +27,7 @@ export class OccurrenceRegisterComponent implements OnInit {
 
   @ViewChild('search',{static: true})
   public searchElementRef: ElementRef;
-
-
+  public iconUrl = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
   constructor(private occurrenceService: OccurrenceService,
               private mapsAPILoader: MapsAPILoader,
               private ngZone: NgZone
@@ -127,8 +126,7 @@ export class OccurrenceRegisterComponent implements OnInit {
         if (results[0]) {
           this.zoom = 16;
           this.address = results[0].formatted_address;
-          this.bairro = results[0].address_components[2].long_name; 
-          console.log(this.bairro);       
+          this.bairro = results[0].address_components[2].long_name;       
         } else {
           window.alert('No results found');
         }
@@ -139,9 +137,17 @@ export class OccurrenceRegisterComponent implements OnInit {
     });
   }
 
-
   refresh(): void {
     window.location.reload();
   }
+
+  showButtons(){
+    console.log($(window).width());
+    if($(window).width() < 991){
+          return true;
+    }
+          return false;
+  }
+  
   
 }

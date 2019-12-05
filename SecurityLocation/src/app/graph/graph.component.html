@@ -1,5 +1,27 @@
 <div class="main-content">
   <div class="container-fluid">
+      <div *ngIf="showButtons()">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <div class="row">
+                <div class="col-md-2">
+                  <a class="card-title" href="#/occurrence-register"
+                    >Cadastro de Ocorrência</a
+                  >
+                </div>
+                <div class="col-md-2">
+                  <a class="card-title" href="#/occurrence-search"
+                    >Consulta de Ocorrência</a
+                  >
+                </div>
+                <div class="col-md-2">
+                  <a class="card-title" href="#/graph">Gráfico</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  <div class="card ">
     <div class="row">
       <div class="col-md-3">
         <mat-form-field class="example-full-width">
@@ -45,6 +67,7 @@
         </button>
       </div>
     </div>
+  </div>
     <!-- <div class="card card-chart">
             <div class="card-header card-header-warning">
                 <div class="ct-chart" id="websiteViewsChart"></div>
