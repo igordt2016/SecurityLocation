@@ -73,6 +73,7 @@
                   <option>Assalto</option>
                   <option>Furto</option>
                   <option>Estupro</option>
+                  <option>Assédio</option>
                   <option>Som Alto</option>
                   <option>Homicidio</option>
                 </select>
@@ -94,7 +95,6 @@
                 <mat-label>Data da Ocorrência</mat-label>
                 <input
                   matInput
-                  required
                   type="date"
                   [(ngModel)]="occurrence.data"
                   name="data"
@@ -108,7 +108,6 @@
                 <mat-label>Polícia Presente?</mat-label>
                 <select
                   matNativeControl
-                  required
                   [(ngModel)]="occurrence.temPolicia"
                   name="temPolicia"
                 >
