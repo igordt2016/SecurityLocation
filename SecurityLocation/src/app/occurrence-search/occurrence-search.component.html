@@ -31,7 +31,6 @@
           >
             Mostrar Legenda
           </button>
-
         </div>
       </div>
       <div *ngIf="click == 1">
@@ -45,16 +44,16 @@
           <img src="assets/img/red-dot.png" width="40" height="20" />
           <h5>Área de Perigo, muitas ocorrências registradas nesse bairro.</h5>
           <div class="card-body">
-              <div class="row">
-                <button
-                  mat-raised-button
-                  (click)="ocultarLegenda()"
-                  class="btn pull-left"
-                >
-                  Ocultar Legenda
-                </button>
-              </div>
+            <div class="row">
+              <button
+                mat-raised-button
+                (click)="ocultarLegenda()"
+                class="btn pull-left"
+              >
+                Ocultar Legenda
+              </button>
             </div>
+          </div>
         </div>
       </div>
       <div class="card-header card-header-danger">

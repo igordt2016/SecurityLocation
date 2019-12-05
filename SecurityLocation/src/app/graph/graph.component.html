@@ -1,78 +1,73 @@
 <div class="main-content">
   <div class="container-fluid">
-      <div *ngIf="showButtons()">
-          <div class="card">
-            <div class="card-header card-header-danger">
-              <div class="row">
-                <div class="col-md-2">
-                  <a class="card-title" href="#/occurrence-register"
-                    >Cadastro de Ocorrência</a
-                  >
-                </div>
-                <div class="col-md-2">
-                  <a class="card-title" href="#/occurrence-search"
-                    >Consulta de Ocorrência</a
-                  >
-                </div>
-                <div class="col-md-2">
-                  <a class="card-title" href="#/graph">Gráfico</a>
-                </div>
-              </div>
+    <div *ngIf="showButtons()">
+      <div class="card">
+        <div class="card-header card-header-danger">
+          <div class="row">
+            <div class="col-md-2">
+              <a class="card-title" href="#/occurrence-register"
+                >Cadastro de Ocorrência</a
+              >
+            </div>
+            <div class="col-md-2">
+              <a class="card-title" href="#/occurrence-search"
+                >Consulta de Ocorrência</a
+              >
+            </div>
+            <div class="col-md-2">
+              <a class="card-title" href="#/graph">Gráfico</a>
             </div>
           </div>
         </div>
-  <div class="card ">
-    <div class="row">
-      <div class="col-md-3">
-        <mat-form-field class="example-full-width">
-          <input
-            matInput
-            placeholder="Bairro 1"
-            type="text"
-            [(ngModel)]="occurrence.local1"
-            name="local1"
-          />
-        </mat-form-field>
-      </div>
-      <div class="col-md-3">
-        <mat-form-field class="example-full-width">
-          <input
-            matInput
-            placeholder="Bairro 2"
-            type="text"
-            [(ngModel)]="occurrence.local2"
-            name="local2"
-          />
-        </mat-form-field>
-      </div>
-      <div class="col-md-3">
-        <mat-form-field class="example-full-width">
-          <input
-            matInput
-            placeholder="Bairro 3"
-            type="text"
-            [(ngModel)]="occurrence.local3"
-            name="local3"
-          />
-        </mat-form-field>
-      </div>
-      <div class="col-md-3">
-        <button
-          mat-raised-button
-          type="submit"
-          class="btn btn-success pull-right"
-          (click)="onSubmit()"
-        >
-          Confirmar
-        </button>
       </div>
     </div>
-  </div>
-    <!-- <div class="card card-chart">
-            <div class="card-header card-header-warning">
-                <div class="ct-chart" id="websiteViewsChart"></div>
-            </div>
-        </div> -->
+    <div class="card ">
+      <div class="row">
+        <div class="col-md-3">
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              placeholder="Bairro 1"
+              type="text"
+              [(ngModel)]="occurrence.local1"
+              name="local1"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              placeholder="Bairro 2"
+              type="text"
+              [(ngModel)]="occurrence.local2"
+              name="local2"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              placeholder="Bairro 3"
+              type="text"
+              [(ngModel)]="occurrence.local3"
+              name="local3"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <button
+            mat-raised-button
+            type="submit"
+            class="btn btn-success pull-right"
+            (click)="onSubmit()"
+          >
+            Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
     <div>
       <div style="display: block">
         <canvas
