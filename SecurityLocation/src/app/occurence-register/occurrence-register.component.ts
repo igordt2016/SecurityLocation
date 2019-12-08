@@ -111,7 +111,6 @@ export class OccurrenceRegisterComponent implements OnInit {
   }
 
   markerDragEnd($event: MouseEvent) {
-    console.log($event);
     this.latitude = $event.coords.lat;
     this.longitude = $event.coords.lng;
     this.getAddress(this.latitude, this.longitude);
@@ -141,7 +140,6 @@ export class OccurrenceRegisterComponent implements OnInit {
   }
 
   showLinks() {
-    console.log($(window).width());
     if ($(window).width() < 991) {
       return true;
     }

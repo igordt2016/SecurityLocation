@@ -177,7 +177,6 @@ export class OccurrenceSearchComponent implements OnInit {
               var totalBairro = this.bairros.filter(e => {
                 return e === inputBairro;
               });
-              console.log(totalBairro.length);
               if(totalBairro.length >= 2 && totalBairro.length < 4 ){
               this.iconUrl = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
               }else if(totalBairro.length >= 4 && totalBairro.length < 7){

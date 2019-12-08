@@ -146,7 +146,6 @@ export class GraphComponent implements OnInit {
   }
 
   showButtons() {
-    console.log($(window).width());
     if ($(window).width() < 991) {
       return true;
     }
