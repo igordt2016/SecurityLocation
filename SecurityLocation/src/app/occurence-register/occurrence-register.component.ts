@@ -77,19 +77,18 @@ export class OccurrenceRegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.occurrence.data.toString(), this.myDate.toString());
     if (this.occurrence.tpOcorrencia == "") {
-      alert("Por Favor, seleciona o tipo da Ocorrência.");
-      // window.alert("Por Favor, seleciona o tipo da Ocorrência.");
+      // alert("Por Favor, seleciona o tipo da Ocorrência.");
+      window.alert("Por Favor, seleciona o tipo da Ocorrência.");
     } else if (this.occurrence.data == null) {
-      alert("Por Favor, informe a data.");
-      // window.alert("Por Favor, informe a data.");
+      // alert("Por Favor, informe a data.");
+      window.alert("Por Favor, informe a data.");
     } else if (this.occurrence.data.toString() > this.myDate.toString()) {
-      alert("A data da Ocorrência não pode ser maior que hoje.");
-      // window.alert("A data da Ocorrência não pode ser maior que hoje.");
+      // alert("A data da Ocorrência não pode ser maior que hoje.");
+      window.alert("A data da Ocorrência não pode ser maior que hoje.");
     } else if (this.occurrence.temPolicia == "") {
-      alert("Informe se houve comparecimento da polícia.");
-      // window.alert("Informe se houve comparecimento da polícia.");
+      // alert("Informe se houve comparecimento da polícia.");
+      window.alert("Informe se houve comparecimento da polícia.");
     } else {
       this.submitted = true;
       this.beforeSave();
