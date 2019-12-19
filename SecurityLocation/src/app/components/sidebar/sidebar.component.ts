@@ -8,14 +8,9 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/occurrence-register', title: 'Cadastro de Ocorrência',  icon:'content_paste', class: '' },
-    // { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
+    { path: '/occurrence-register', title: 'Cadastro de Ocorrência',  icon:'content_paste', class: '' },    
     { path: '/occurrence-search', title: 'Ver Ocorrências Por Bairro',  icon:'library_books', class: '' },
     { path: '/graph', title: 'Gráfico Por Bairro',  icon: 'dashboard', class: ''},
-    // { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    // { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
-    // { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
-    // { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
 ];
 
 @Component({
